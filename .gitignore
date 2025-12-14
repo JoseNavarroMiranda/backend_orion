@@ -1,0 +1,27 @@
+# Python
+*.pyc
+__pycache__/
+*~
+*.log
+.coverage
+.tox/
+
+# Virtual Environment
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Django
+db.sqlite3
+local_settings.py
+media/
+
+# IDE specific files
+.idea/  # For PyCharm and other JetBrains IDEs
+.vscode/ # For VS Code (if you want to ignore user-specific settings)
+
+# OS generated files
+.DS_Store # macOS
+Thumbs.db # Windows
