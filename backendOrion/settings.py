@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["0.0.0.0", "localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -110,6 +111,15 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+#Django interface configuration
+JAZZMIN_SETTINGS = {
+    "site_title": "Orion Admin",
+    "site_header": "Orion",
+    "site_brand": "Orion Admin",
+    "welcome_sign": "Bienvenido",
+    "theme": "flatly",
+}
 
 
 # Internationalization

@@ -8,6 +8,7 @@ class CollaboratorAdmin(admin.ModelAdmin):
     search_fields = ("name", "last_name", "role")
     ordering = ("last_name", "name")
 
+
 @admin.register(StackInfo)
 class StackInfoAdmin(admin.ModelAdmin):
     list_display = ("email", "phone", "description_service", "created_at")

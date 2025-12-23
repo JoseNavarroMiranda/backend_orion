@@ -23,6 +23,4 @@ urlpatterns = [
     path("core/", include("core.urls")),
     path("", RedirectView.as_view(url="/admin/")),
 
-
-
 ]
