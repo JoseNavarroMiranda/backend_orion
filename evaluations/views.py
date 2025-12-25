@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from rest_framework import generics
+from .models import StackInfo
+from .serializers import StackInfo
 
-# Create your views here.
+class StackInfoCreateAPIView(generics.CreateAPIView):
+    queryset = StackInfo.objects.all()
+    serializers_class = StackInfoSerializers
+
