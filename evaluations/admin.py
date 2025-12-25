@@ -11,8 +11,8 @@ class CollaboratorAdmin(admin.ModelAdmin):
 
 @admin.register(StackInfo)
 class StackInfoAdmin(admin.ModelAdmin):
-    list_display = ("email", "phone", "description_service", "created_at")
-    readonly_fields = ("email", "phone", "description_service", "created_at")
+    list_display = ("name", "last_name","email", "phone", "description_service", "created_at")
+    readonly_fields = ("name", "last_name","email", "phone", "description_service", "created_at")
     search_fields = ("email",)
 
     def has_add_permission(self, request):

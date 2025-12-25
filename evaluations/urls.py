@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path # type: ignore
 from .views import StackInfoCreateAPIView
 
 app_name = "evaluations"
 
 urlpatterns = [
-    path("stack_info/", StackInfoCreateAPIView.as_view(), name = "stackinfo")
+    path("stackinfo/", StackInfoCreateAPIView.as_view(), name = "stackinfo")
 ]
