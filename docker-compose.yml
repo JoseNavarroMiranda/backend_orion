@@ -38,7 +38,8 @@ services:
       - backend-net
 networks:
   backend-net:
-    driver: bridge
+    external: true
+    name: backend-net
 
 volumes:
   db_data:
