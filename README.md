@@ -12,11 +12,13 @@ Backend desarrollado con Django para el proyecto Orion.
 
 ### Levantar los contenedores (Desarrollo)
 
-**Importante**: Antes de levantar los contenedores en modo desarrollo, es necesario crear la red Docker manualmente:
+**Importante**: Antes de levantar los contenedores en modo desarrollo, es necesario crear la red Docker manualmente porque el archivo `docker-compose.yml` la define como red externa (`external: true`):
 
 ```bash
 docker network create backend-net
 ```
+
+Nota: En el modo producción (`docker-compose.prod.yml`), la red se crea automáticamente porque usa `driver: bridge`.
 
 Para iniciar los contenedores en modo desarrollo:
 
@@ -111,8 +113,10 @@ docker-compose exec web bash
 Acceder a la base de datos MySQL:
 
 ```bash
-docker-compose exec db mysql -u${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE}
+docker-compose exec db mysql -u ${MYSQL_USER} -p ${MYSQL_DATABASE}
 ```
+
+Nota: El comando solicitará la contraseña de forma interactiva por seguridad.
 
 ## Configuración del archivo .env
 
@@ -120,13 +124,15 @@ Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 
 ```env
 # MySQL Configuration
-MYSQL_ROOT_PASSWORD=rootpass
+MYSQL_ROOT_PASSWORD=CHANGE_ME_secure_root_password
 MYSQL_DATABASE=orion_db
 MYSQL_USER=orion_user
-MYSQL_PASSWORD=orion_password
+MYSQL_PASSWORD=CHANGE_ME_secure_password
 MYSQL_HOST=db
 MYSQL_PORT=3306
 ```
+
+**Importante**: Cambia los valores `CHANGE_ME` por contraseñas seguras antes de usar en producción.
 
 ## Acceso a la aplicación
 
