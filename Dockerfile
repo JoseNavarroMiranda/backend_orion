@@ -5,7 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Runtime libs (mysqlclient suele necesitar libs del sistema)
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3-dev \
