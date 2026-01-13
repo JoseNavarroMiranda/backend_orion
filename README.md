@@ -118,27 +118,7 @@ docker-compose exec db mysql -u ${MYSQL_USER} -p ${MYSQL_DATABASE}
 
 Nota: El comando solicitará la contraseña de forma interactiva por seguridad.
 
-## Configuración del archivo .env
 
-Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
-
-```env
-# MySQL Configuration
-MYSQL_ROOT_PASSWORD=CHANGE_ME_secure_root_password
-MYSQL_DATABASE=orion_db
-MYSQL_USER=orion_user
-MYSQL_PASSWORD=CHANGE_ME_secure_password
-MYSQL_HOST=db
-MYSQL_PORT=3306
-```
-
-**Importante**: Cambia los valores `CHANGE_ME` por contraseñas seguras antes de usar en producción.
-
-## Acceso a la aplicación
-
-Una vez levantados los contenedores, la aplicación estará disponible en:
-
-```
 http://localhost:8000
 ```
 
