@@ -25,6 +25,6 @@ class StackInfo(models.Model):
     name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-    phone = models.IntegerField()
-    description_service = models.CharField(max_length=200)
+    phone = models.CharField(max_length=10)
+    description_service = models.CharField(max_length=300)
     created_at = models.DateTimeField(auto_now_add=True)

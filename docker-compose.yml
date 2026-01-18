@@ -38,7 +38,6 @@ services:
       - backend-net
 networks:
   backend-net:
-    external: true
     name: backend-net
 
 volumes:
