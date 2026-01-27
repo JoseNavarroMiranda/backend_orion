@@ -9,7 +9,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3-dev \
-    default-libmysqlclient-dev \
+    libpq-dev \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
@@ -28,4 +28,4 @@ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # ---------- Prod ----------
 FROM base AS prod
-CMD ["gunicorn", "tu_proyecto.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "60"]
+CMD ["gunicorn", "backendOrion.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "60"]
